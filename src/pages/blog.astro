@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "ブログ";
 ---
 
 <html lang="en">
@@ -8,13 +8,18 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Ju5momのAstro | Blog</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
     <a href="/">ホーム</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
-		<h1>Blog</h1>
+		<h1>{pageTitle}</h1>
 		<p>Astroについて学んだことを綴るページである。</p>
+		<ul>
+			<li><a href="/posts/post-1/">記事1</a></li>
+			<li><a href="/posts/post-2/">記事2</a></li>
+			<li><a href="/posts/post-3/">記事3</a></li>
+		</ul>
 	</body>
 </html>

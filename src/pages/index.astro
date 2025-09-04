@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Ju5momのAstro学習";
 ---
 
 <html lang="en">
@@ -8,13 +8,17 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Ju5momのAstro学習</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/">ホーム</a>
     <a href="/about">About</a>
 		<a href="/blog">Blog</a>
-		<h1>私のAstroサイト</h1>
-		<p>進捗は<a href="https://docs.astro.build/ja/tutorial/2-pages/1/">ついに複数ページをNetlifyで公開</a>まで。続きはここから</p>
+		<h1>{pageTitle}</h1>
+		<p><a href="https://docs.astro.build/ja/tutorial/2-pages/2/">初めてのMarkdownによるブログ記事</a>　続きはここから</p>
+		<h2>memo</h2>
+		<ul>
+			<li>Astroのテンプレート構文はJSX構文に似ています。HTMLでスクリプトを使用する方法がわからない場合は、JSXでのやり方を検索するのが良い出発点になるでしょう！</li>
+		</ul>
 	</body>
 </html>
