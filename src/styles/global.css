@@ -1,5 +1,5 @@
 html {
-  background-color: #1ff5f9;
+  background-color: #1b52a0;
   font-family: sans-serif;
 }
 
@@ -9,6 +9,7 @@ body {
   max-width: 80ch;
   padding: 1rem;
   line-height: 1.5;
+  color: #fdcf47;
 }
 
 * {
@@ -16,6 +17,12 @@ body {
 }
 
 h1 {
+  color: #effbfd;
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+a {
+  color: #effbfd;
+  padding: 0 .2em;
 }
