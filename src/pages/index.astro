@@ -19,11 +19,24 @@ const pageTitle = "Ju5momのAstro学習";
 		<Header />
 		<h1>{pageTitle}</h1>
 		<h2>next</h2>
-		<p><a href="https://docs.astro.build/ja/tutorial/3-components/4/" target="_blank">初めてのスクリプトをブラウザに送信する</a>　次回はここからスタート！</p>
+		<p><a href="https://docs.astro.build/ja/tutorial/4-layouts/" target="_blank">ユニット4の導入 - レイアウト</a>　次回はここからスタート！</p>
 		<h2>memo</h2>
 		<ul>
 			<li>Astroのテンプレート構文はJSX構文に似ています。HTMLでスクリプトを使用する方法がわからない場合は、JSXでのやり方を検索するのが良い出発点になるでしょう！</li>
+
+			<li><a href="https://docs.astro.build/ja/tutorial/3-components/4/">「初めてのスクリプトをブラウザに送信する」</a><br>これまでにも、サイトの一部を作成するためにJavaScriptを使用してきました。<br>
+				<ul>
+					<li>ページタイトルと見出しの動的な定義</li>
+					<li>概要ページでのスキルリストのマッピング</li>
+					<li>HTML要素の条件に応じた表示</li>
+				</ul>
+				これらの命令はすべてビルド時に実行され、サイトの静的HTMLを作成したあと、コードは「捨てられます」。<br>
+				script タグ内の JavaScript はブラウザに送信され、ユーザーの操作に応じてページの更新や入力の切り替えなどを実行します。
+			</li>
 		</ul>
 		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
