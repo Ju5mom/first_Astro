@@ -87,3 +87,14 @@ a {
   }
 
 }
+
+/* about */
+h1.about {
+  color: #fdcf47;
+  font-size: 4rem;
+}
+
+.skill {
+  color: #f06066;
+  font-weight: bold;
+}

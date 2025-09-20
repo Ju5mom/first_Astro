@@ -1,24 +1,10 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Ju5momのAstro学習";
-
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-		<h2>next</h2>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>next</h2>
 		<p><a href="https://docs.astro.build/ja/tutorial/4-layouts/" target="_blank">ユニット4の導入 - レイアウト</a>　次回はここからスタート！</p>
 		<h2>memo</h2>
 		<ul>
@@ -34,9 +20,4 @@ const pageTitle = "Ju5momのAstro学習";
 				script タグ内の JavaScript はブラウザに送信され、ユーザーの操作に応じてページの更新や入力の切り替えなどを実行します。
 			</li>
 		</ul>
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+</BaseLayout>
