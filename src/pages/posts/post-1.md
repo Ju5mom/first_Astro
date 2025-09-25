@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "私の最初のブログ記事"
 pubData: 2025-09-04
 description: "これは私の最初の記事です。"
@@ -9,9 +10,6 @@ image:
 tags: ["astro", "ブログ", "公開学習"]
 ---
 
-# 私の最初のブログ記事
-
-投稿日: 2025-09-07
 Astro の学習についての _備忘録_ である。
 
 ## Astroコンポーネントテンプレートにおける map の挙動
