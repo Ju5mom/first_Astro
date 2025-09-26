@@ -1,5 +1,7 @@
 ---
 const { frontmatter } = Astro.props;
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 ---
 <html lang="ja">
 	<head>
@@ -13,7 +15,9 @@ const { frontmatter } = Astro.props;
 		<h1>{frontmatter.title}</h1>
     <p>著者: {frontmatter.author}</p>
     <p>投稿日: {frontmatter.pubData}</p>
+		<h2>{frontmatter.description}</h2>
+		<ul>{frontmatter.tags.map((tag) => <li>{tag}</li>)}</ul>
     <slot />
-<slot />
+		<Footer />
 	</body>
 </html>
