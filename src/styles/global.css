@@ -25,6 +25,7 @@ h1 {
 a {
   color: #effbfd;
   padding: 0 .2em;
+  word-break: break-all;
 }
 
 /* ナビゲーションのスタイル */

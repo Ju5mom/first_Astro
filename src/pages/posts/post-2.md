@@ -2,12 +2,18 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 私の2番目のブログ記事
 author: Astro学習者
-description: "Astroを少し学んだら、止まらなくなりました！"
+description: "レイアウトの入れ子を試す"
 image:
   url: "https://docs.astro.build/assets/arc.webp"
   alt: "Astroのアークのサムネイル。"
-pubData: 2022-07-08
+pubData: 2025-10-01
 tags: ["astro", "ブログ", "公開学習", "成功"]
 ---
 
-Astro を学習し始めて最初の 1 週間が上手くいったので、もう少し試してみることにしました。小さなコンポーネントを書いてメモリーからインポートしました！
+サイト全体で共通のBaseLayout.astroは、ナビゲーションやフッター、SEOメタタグ、グローバルスタイル、フォントなどのページテンプレートを処理する。
+
+
+MarkdownPostLayout.astro では、ブログ記事から受け取ったpropsをBaseLayoutに渡す。pageTitle属性に、frontmatter.title を渡し、propsをBaseLayoutへ渡している。
+
+「レイアウトの入れ子」
+https://docs.astro.build/ja/basics/layouts/#%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E5%85%A5%E3%82%8C%E5%AD%90
