@@ -30,7 +30,7 @@ Astro だけに依存しないコードになる
 将来のバージョンでも安心して動く
 
 ## どうすればいいか
-「ラッパー関数」を1つ作っておけば、Astro.glob() とほぼ同じ感覚で使えます 👇
+「ラッパー関数」を1つ作っておけば、Astro.glob() とほぼ同じ感覚で使えます 👇<br>
 src/scripts/loadPosts.js
 
 呼び出しはフロントマターの中に
@@ -40,7 +40,8 @@ import { loadPosts } from '../scripts/loadPosts.js'
 ### markdownファイルを読み込むと‥
 
 AstroではMarkdownを読み込むと、自動的に frontmatter（記事のメタ情報） と本文（Content） に分けてくれます。
-
+<br>
+```javascript
 {
   frontmatter: {
     title: "Astro入門",
@@ -49,5 +50,6 @@ AstroではMarkdownを読み込むと、自動的に frontmatter（記事のメ�
   Content: [Markdownの本文],
   file: "../pages/posts/astro-intro.md"
 }
+```
 
 

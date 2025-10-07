@@ -40,6 +40,8 @@ export const loadPosts = async () => {
           Content: [Markdownの本文],
           file: "../pages/posts/astro-intro.md"
         }
+
+        ※ AstroではMarkdownを読み込むと、自動的に frontmatter（記事のメタ情報） と本文（Content） に分けてくれます。
       */
 
       /*
@@ -58,3 +60,10 @@ export const loadPosts = async () => {
   // 日付の降順に並び替え
   return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
+
+/*
+map()	非同期処理（Promise）を複数立ち上げるが、完了は待たない
+await resolver()	その1つのPromise（Markdown読み込み）が解決するまで待つ
+Promise.all()	すべてのPromiseが解決するのをまとめて待つ
+await Promise.all()	全部の処理が終わってから、結果配列を返す
+*/
