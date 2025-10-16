@@ -10,6 +10,6 @@ console.log(allPosts); // ターミナルに出力される！
 <BaseLayout pageTitle={pageTitle}>
 	<p>Astroについて学んだことを綴るページである。</p>
 		<ul>
-			{allPosts.map(post => <BlogPost url={post.url} title={post.title}></BlogPost>)}
+			{allPosts.map(post => <BlogPost url={post.url} title={post.title} />)}
 		</ul>
 </BaseLayout>
