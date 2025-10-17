@@ -6,7 +6,25 @@ import BlogPost from '../../components/BlogPost.astro';
 */
 export async function getStaticPaths() {
   const allPosts = Object.values(import.meta.glob('../posts/*.md', {eager: true}));
+  /* import.meta.glob('../posts/*.md', {eager: true}) の返り値 => オブジェクト
+    {
+      "../posts/post-1.md": { frontmatter: {...}, compiledContent: "...", ... },
+      "../posts/post-2.md": { ... },
+    }
 
+    Object.values(object) は静的メソッドで、指定されたオブジェクトが持つ列挙可能なプロパティの文字列キーのプロパティ値を配列で返します。
+    [
+      { frontmatter: {...}, compiledContent: "...", ... },
+      { frontmatter: {...}, compiledContent: "...", ... },
+    ]
+  */
+
+  const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+  /*
+    Set オブジェクトに各 post から tag を取り出し、flat() でネストされた配列をフラットにし、渡すことでユニークなタグの配列を作成、uniqueTags に保存
+  */
+
+  /*
   return [
     {params: {tag: "astro"}, props: {posts: allPosts}},
     {params: {tag: "成功"}, props: {posts: allPosts}},
@@ -15,16 +33,32 @@ export async function getStaticPaths() {
     {params: {tag: "つまずき"}, props: {posts: allPosts}},
     {params: {tag: "公開学習"}, props: {posts: allPosts}},
   ];
+  */
+
+  /*
+    一意のタグ配列からひとつずつ tag を取り出し、
+    すべての post から該当するタグがフロントマターにあるかフィルタリングし、該当するタグがある post は
+    filteredPosts に配列で渡される。
+
+    最終的に該当するタグと、そして props オブジェクトには、その該当するタグがフロントマターにある post を配列で渡している。
+  */
+
+  return uniqueTags.map(tag => {
+    const filteredPosts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
 }
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const filteredPosts = posts.filter(post => post.frontmatter.tags?.includes(tag));
 ---
 <BaseLayout pageTitle={tag}>
   <p>{tag}のタグが付いた記事</p>
   <ul>
-    <!-- {filteredPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)} -->
-    {filteredPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+    <!-- tag が含まれる　post をひとつずつ取り出し、BlogPostに情報を渡して呼び出し-->
+    {posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
   </ul>
 </BaseLayout>
