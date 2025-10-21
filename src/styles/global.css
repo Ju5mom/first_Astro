@@ -28,6 +28,10 @@ a {
   word-break: break-all;
 }
 
+p {
+  margin: 0;
+}
+
 /* ナビゲーションのスタイル */
 .hamburger {
   padding-right: 20px;
@@ -87,6 +91,24 @@ a {
     display: none;
   }
 
+}
+
+/* tag */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag a {
+  display: inline-block;
+  margin: 0.25em;
+  border: dotted 1px #effbfd;
+  border-radius: .5em;
+  padding: .5em 1em;
+  font-size: 1.15em;
+  background-color: #1b52a0;
+  text-decoration: none;
 }
 
 /* about */
