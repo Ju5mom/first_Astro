@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
 const pageTitle = "Ju5momのAstro学習";
 ---
 
@@ -7,6 +8,8 @@ const pageTitle = "Ju5momのAstro学習";
 	<h2>next</h2>
 		<p><a href="https://docs.astro.build/ja/tutorial/5-astro-api/4/" target="_blank">RSSフィードを追加する</a>次回はここから！
 		</p>
+
+		<Greeting client:load messages={["あいや", "うるっふー", "いえっさ",]} />
 		<h2>memo</h2>
 		<ul>
 			<li>Astroのテンプレート構文はJSX構文に似ています。HTMLでスクリプトを使用する方法がわからない場合は、JSXでのやり方を検索するのが良い出発点になるでしょう！</li>
